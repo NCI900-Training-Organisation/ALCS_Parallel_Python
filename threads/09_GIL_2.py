@@ -23,7 +23,7 @@ print('Time taken in seconds -', end - start)
 # Python manages a memory using reference counting
 a = []
 b = a
-print(sys.getrefcount(a)) 
+print('Refcount = ', sys.getrefcount(a)) 
 
 # Reference count variable needed protection from race conditions 
 # The GIL is a single lock on the interpreter itself.

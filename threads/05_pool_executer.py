@@ -17,12 +17,15 @@ if __name__ == "__main__":
     thread_index = [1, 2, 3]
 
     # create an instance of ThreadPoolExecutor
+    # creates and manages thread pools in Python
     pool = ThreadPoolExecutor(max_workers=8)
 
-    # launch the thread by mapping each one thread index to one thread
+    # launch the thread by mapping thread index to one thread
     results = pool.map(thread_kernel, thread_index) # This is non-blocking
 
     for res in results:
         print(res) 
 
     pool.shutdown()
+
+# All threads enqueued to ThreadPoolExecutor will be joined before the interpreter can exit

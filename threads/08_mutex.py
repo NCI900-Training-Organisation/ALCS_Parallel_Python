@@ -5,6 +5,7 @@ from time import sleep
 from concurrent.futures import ThreadPoolExecutor
 from concurrent.futures import wait
 
+sum  = 0
 
 def thread_kernel_add(thread_index, repeat, value):
     logging.info("I am thread %s", thread_index)
@@ -48,7 +49,6 @@ if __name__ == "__main__":
     format = "%(asctime)s: %(message)s"
     logging.basicConfig(format=format, level=logging.INFO, datefmt="%H:%M:%S")  
     
-    sum  = 0
     lock = threading.Lock()
     
     # launch the threads
